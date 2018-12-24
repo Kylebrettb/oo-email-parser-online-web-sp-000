@@ -5,3 +5,18 @@
 
 
 
+require 'pry'
+
+class EmailParser
+  attr_accessor :email
+
+  def initialize(emails)
+    @emails = emails
+  end
+
+  def parse
+    parse = @emails.split(" ")
+    parser = parse.collect {|email| email.delete(",")}
+    parser.uniq
+  end
+end 
